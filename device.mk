@@ -317,6 +317,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl
+# QCOM
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-qcom.xml:system/etc/permissions/privapp-permissions-qcom.xml \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # QMI
 PRODUCT_PACKAGES += \
