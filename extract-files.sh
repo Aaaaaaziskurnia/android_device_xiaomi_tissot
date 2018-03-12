@@ -39,6 +39,9 @@ CLEAN_VENDOR=true
 
 while [ "$1" != "" ]; do
     case $1 in
+        -p | --path )           shift
+                                SRC=$1
+                                ;;
         -n | --no-cleanup )     CLEAN_VENDOR=false
                                 ;;
         -s | --section )        shift
@@ -59,6 +62,5 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
